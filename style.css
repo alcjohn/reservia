@@ -1,0 +1,114 @@
+:root {
+  --primary: #0065fc;
+  --primary-light: #deebff;
+  --grey: #f2f2f2;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Raleway', sans-serif;
+}
+main {
+  flex: 1;
+}
+
+/**
+Header - Start
+*/
+header {
+  display: grid;
+  grid-template:
+    'logo signup'
+    'nav nav';
+  align-items: center;
+  justify-content: space-between;
+}
+header .logo {
+  grid-area: logo;
+  padding: 1rem;
+}
+header .nav {
+  grid-area: nav;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .nav .link {
+  text-decoration: none;
+  flex: 1;
+  text-align: center;
+  padding: 1rem;
+  color: black;
+  border-bottom: 3px solid var(--grey);
+}
+header .nav .link.active {
+  color: var(--primary);
+  border-bottom: 3px solid var(--primary);
+}
+header .signup {
+  grid-area: signup;
+  padding: 1rem;
+}
+header .signup a {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: bold;
+}
+/** HEADER - END */
+
+/* sm */
+@media (min-width: 640px) {
+  /**
+  Header sm
+    */
+  header {
+    grid-template: 'logo nav signup' 1fr / 1fr auto auto;
+  }
+  header .nav {
+    height: 100%;
+  }
+  header .nav .link {
+    border-bottom: none;
+    border-top: 3px solid var(--grey);
+    padding: 0 1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  header .nav .link.active {
+    border-bottom: none;
+    border-top: 3px solid var(--primary);
+  }
+  header .signup {
+    height: 100%;
+    padding: 0;
+  }
+  header .signup a {
+    padding: 0 1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* md */
+@media (min-width: 768px) {
+}
+
+/* lg */
+@media (min-width: 1024px) {
+}
+
+/* xl */
+@media (min-width: 1280px) {
+}
+
+/* 2xl */
+@media (min-width: 1536px) {
+}
